@@ -2,7 +2,7 @@ System.config({
   defaultJSExtensions: true,
   transpiler: "typescript",
   paths: {
-    "*": "src/*",
+    "*": "app/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
