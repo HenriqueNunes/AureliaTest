@@ -1,1 +1,8 @@
-﻿wwwroot\debug
+﻿node_modules 
+jspm_packages 
+bower_components 
+debug
+.idea 
+.DS_STORE 
+dist 
+build/reports 
