@@ -1,13 +1,13 @@
 System.register([], function(exports_1) {
-    var ChildRouter;
+    var App;
     return {
         setters:[],
         execute: function() {
-            ChildRouter = (function () {
-                function ChildRouter() {
-                    this.heading = 'Child Router';
+            App = (function () {
+                function App() {
                 }
-                ChildRouter.prototype.configureRouter = function (config, router) {
+                App.prototype.configureRouter = function (config, router) {
+                    config.title = 'Aurelia';
                     config.map([
                         { route: ['', 'welcome'], name: 'welcome', moduleId: 'welcome', nav: true, title: 'Welcome' },
                         { route: 'users', name: 'users', moduleId: 'users', nav: true, title: 'Github Users' },
@@ -15,10 +15,10 @@ System.register([], function(exports_1) {
                     ]);
                     this.router = router;
                 };
-                return ChildRouter;
+                return App;
             })();
-            exports_1("ChildRouter", ChildRouter);
+            exports_1("App", App);
         }
     }
 });
-//# sourceMappingURL=child-router.js.map
+//# sourceMappingURL=app.js.map

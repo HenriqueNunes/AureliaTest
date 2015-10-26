@@ -6,7 +6,7 @@
     "sourceMap": true,
     "target": "es5",
     "module": "system",
-    "outDir": "wwwroot/src",
+    "outDir": "src",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },

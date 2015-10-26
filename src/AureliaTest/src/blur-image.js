@@ -1,4 +1,16 @@
-System.register([], function(exports_1) {
+System.register(['aurelia-framework'], function(exports_1) {
+    var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
+        switch (arguments.length) {
+            case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
+            case 3: return decorators.reduceRight(function(o, d) { return (d && d(target, key)), void 0; }, void 0);
+            case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
+        }
+    };
+    var __metadata = (this && this.__metadata) || function (k, v) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    };
+    var aurelia_framework_1;
     var BlurImageCustomAttribute, mul_table, shg_table, BLUR_RADIUS;
     function stackBlurCanvasRGBA(canvas, top_x, top_y, width, height, radius) {
         if (isNaN(radius) || radius < 1)
@@ -200,9 +212,11 @@ System.register([], function(exports_1) {
         stackBlurCanvasRGBA(canvas, 0, 0, w, h, BLUR_RADIUS);
     }
     return {
-        setters:[],
+        setters:[
+            function (aurelia_framework_1_1) {
+                aurelia_framework_1 = aurelia_framework_1_1;
+            }],
         execute: function() {
-            //@inject(Element)
             BlurImageCustomAttribute = (function () {
                 function BlurImageCustomAttribute(element) {
                     this.element = element;
@@ -216,6 +230,10 @@ System.register([], function(exports_1) {
                         newImage.onload = function () { return drawBlur(_this.element, newImage); };
                     }
                 };
+                BlurImageCustomAttribute = __decorate([
+                    aurelia_framework_1.autoinject, 
+                    __metadata('design:paramtypes', [Element])
+                ], BlurImageCustomAttribute);
                 return BlurImageCustomAttribute;
             })();
             exports_1("BlurImageCustomAttribute", BlurImageCustomAttribute);
