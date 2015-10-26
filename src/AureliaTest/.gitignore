@@ -2,7 +2,7 @@
 jspm_packages 
 bower_components 
 debug
+dist
 .idea 
 .DS_STORE 
-dist 
 build/reports 
