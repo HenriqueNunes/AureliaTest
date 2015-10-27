@@ -1,34 +1,63 @@
 //import {computedFrom} from 'aurelia-framework';
+import {autoinject} from "aurelia-framework"
+import {HttpClient} from "aurelia-fetch-client"
+import 'fetch';
 
+@autoinject
 export class Welcome {
-  heading = 'Welcome to the Aurelia Navigation App!';
-  firstName = 'John';
-  lastName = 'Doe';
-  previousValue = this.fullName;
+    heading = 'Welcome to the Aurelia Navigation App!';
+    firstName = 'John';
+    lastName = 'Doe';
+    previousValue = this.fullName;
 
-  //Getters can't be directly observed, so they must be dirty checked.
-  //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
-  //To optimize by declaring the properties that this getter is computed from, uncomment the line below
-  //as well as the corrresponding import above.
-  //@computedFrom('firstName', 'lastName')
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
+    values = ["Hello", "World!"];
 
-  submit() {
-    this.previousValue = this.fullName;
-    alert(`Welcome, ${this.fullName}!`);
-  }
+    private http: HttpClient;
 
-  canDeactivate() {
-    if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
+    constructor(http: HttpClient) {
+        http.configure(config=>
+            config
+                .useStandardConfiguration()
+                .withBaseUrl("api/"));
+
+        this.http = http;
     }
-  }
+
+    //Getters can't be directly observed, so they must be dirty checked.
+    //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
+    //To optimize by declaring the properties that this getter is computed from, uncomment the line below
+    //as well as the corrresponding import above.
+    //@computedFrom('firstName', 'lastName')
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+
+    submit() {
+        this.previousValue = this.fullName;
+        alert(`Welcome, ${this.fullName}!`);
+    }
+
+    canDeactivate() {
+        if (this.fullName !== this.previousValue) {
+            return confirm('Are you sure you want to leave?');
+        }
+    }
+
+    doit() {
+        return this.http.fetch('values')
+            .then(response => response.json())
+            .then(values => this.values = values);
+    }
 }
 
 export class UpperValueConverter {
-  toView(value) {
-    return value && value.toUpperCase();
-  }
+    toView(value) {
+        return value && value.toUpperCase();
+    }
+}
+
+export class UppercollectionValueConverter {
+    toView(value: string[]) {
+        return value && value.map(s=> s.toUpperCase());
+    }
 }
