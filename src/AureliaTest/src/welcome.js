@@ -11,7 +11,7 @@ System.register(["aurelia-framework", "aurelia-fetch-client", 'fetch'], function
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var aurelia_framework_1, aurelia_fetch_client_1;
-    var Welcome, UpperValueConverter, UppercollectionValueConverter;
+    var Welcome, UpperValueConverter;
     return {
         setters:[
             function (aurelia_framework_1_1) {
@@ -79,16 +79,12 @@ System.register(["aurelia-framework", "aurelia-fetch-client", 'fetch'], function
                 return UpperValueConverter;
             })();
             exports_1("UpperValueConverter", UpperValueConverter);
-            UppercollectionValueConverter = (function () {
-                function UppercollectionValueConverter() {
-                }
-                UppercollectionValueConverter.prototype.toView = function (value) {
-                    return value && value.map(function (s) { return s.toUpperCase(); });
-                };
-                return UppercollectionValueConverter;
-            })();
-            exports_1("UppercollectionValueConverter", UppercollectionValueConverter);
         }
     }
 });
+//export class UppercollectionValueConverter {
+//    toView(value: string[]) {
+//        return value && value.map(s=> s.toUpperCase());
+//    }
+//}
 //# sourceMappingURL=welcome.js.map

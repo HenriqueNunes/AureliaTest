@@ -56,8 +56,8 @@ export class UpperValueConverter {
     }
 }
 
-export class UppercollectionValueConverter {
-    toView(value: string[]) {
-        return value && value.map(s=> s.toUpperCase());
-    }
-}
+//export class UppercollectionValueConverter {
+//    toView(value: string[]) {
+//        return value && value.map(s=> s.toUpperCase());
+//    }
+//}

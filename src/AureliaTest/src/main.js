@@ -2,6 +2,7 @@ System.register(["bootstrap"], function(exports_1) {
     function configure(aurelia) {
         aurelia.use
             .standardConfiguration()
+            .feature("resources")
             .developmentLogging();
         //Uncomment the line below to enable animation.
         //aurelia.use.plugin('aurelia-animator-css');
