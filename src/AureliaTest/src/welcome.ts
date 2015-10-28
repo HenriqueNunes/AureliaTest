@@ -1,4 +1,4 @@
-//import {computedFrom} from 'aurelia-framework';
+import {computedFrom} from 'aurelia-framework';
 import {autoinject} from "aurelia-framework"
 import {HttpClient} from "aurelia-fetch-client"
 import 'fetch';
@@ -27,7 +27,7 @@ export class Welcome {
     //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
     //To optimize by declaring the properties that this getter is computed from, uncomment the line below
     //as well as the corrresponding import above.
-    //@computedFrom('firstName', 'lastName')
+    @computedFrom('firstName', 'lastName')
     get fullName() {
         return `${this.firstName} ${this.lastName}`;
     }
@@ -43,21 +43,9 @@ export class Welcome {
         }
     }
 
-    doit() {
+    activate() {
         return this.http.fetch('values')
             .then(response => response.json())
             .then(values => this.values = values);
     }
 }
-
-export class UpperValueConverter {
-    toView(value) {
-        return value && value.toUpperCase();
-    }
-}
-
-//export class UppercollectionValueConverter {
-//    toView(value: string[]) {
-//        return value && value.map(s=> s.toUpperCase());
-//    }
-//}

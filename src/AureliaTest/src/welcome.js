@@ -1,4 +1,4 @@
-System.register(["aurelia-framework", "aurelia-fetch-client", 'fetch'], function(exports_1) {
+System.register(['aurelia-framework', "aurelia-framework", "aurelia-fetch-client", 'fetch'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
         switch (arguments.length) {
@@ -10,12 +10,15 @@ System.register(["aurelia-framework", "aurelia-fetch-client", 'fetch'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, aurelia_fetch_client_1;
-    var Welcome, UpperValueConverter;
+    var aurelia_framework_1, aurelia_framework_2, aurelia_fetch_client_1;
+    var Welcome;
     return {
         setters:[
             function (aurelia_framework_1_1) {
                 aurelia_framework_1 = aurelia_framework_1_1;
+            },
+            function (aurelia_framework_2_1) {
+                aurelia_framework_2 = aurelia_framework_2_1;
             },
             function (aurelia_fetch_client_1_1) {
                 aurelia_fetch_client_1 = aurelia_fetch_client_1_1;
@@ -41,7 +44,6 @@ System.register(["aurelia-framework", "aurelia-fetch-client", 'fetch'], function
                     //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
                     //To optimize by declaring the properties that this getter is computed from, uncomment the line below
                     //as well as the corrresponding import above.
-                    //@computedFrom('firstName', 'lastName')
                     get: function () {
                         return this.firstName + " " + this.lastName;
                     },
@@ -57,34 +59,25 @@ System.register(["aurelia-framework", "aurelia-fetch-client", 'fetch'], function
                         return confirm('Are you sure you want to leave?');
                     }
                 };
-                Welcome.prototype.doit = function () {
+                Welcome.prototype.activate = function () {
                     var _this = this;
                     return this.http.fetch('values')
                         .then(function (response) { return response.json(); })
                         .then(function (values) { return _this.values = values; });
                 };
+                Object.defineProperty(Welcome.prototype, "fullName",
+                    __decorate([
+                        aurelia_framework_1.computedFrom('firstName', 'lastName'), 
+                        __metadata('design:type', Object)
+                    ], Welcome.prototype, "fullName", Object.getOwnPropertyDescriptor(Welcome.prototype, "fullName")));
                 Welcome = __decorate([
-                    aurelia_framework_1.autoinject, 
+                    aurelia_framework_2.autoinject, 
                     __metadata('design:paramtypes', [aurelia_fetch_client_1.HttpClient])
                 ], Welcome);
                 return Welcome;
             })();
             exports_1("Welcome", Welcome);
-            UpperValueConverter = (function () {
-                function UpperValueConverter() {
-                }
-                UpperValueConverter.prototype.toView = function (value) {
-                    return value && value.toUpperCase();
-                };
-                return UpperValueConverter;
-            })();
-            exports_1("UpperValueConverter", UpperValueConverter);
         }
     }
 });
-//export class UppercollectionValueConverter {
-//    toView(value: string[]) {
-//        return value && value.map(s=> s.toUpperCase());
-//    }
-//}
 //# sourceMappingURL=welcome.js.map

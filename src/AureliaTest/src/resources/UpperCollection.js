@@ -15,4 +15,4 @@ System.register([], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=UpperCollectionValueConverter.js.map
+//# sourceMappingURL=UpperCollection.js.map
