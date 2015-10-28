@@ -5,4 +5,3 @@ debug
 dist
 .idea 
 .DS_STORE 
-build/reports 
