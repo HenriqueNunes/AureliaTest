@@ -80,4 +80,4 @@ System.register(['aurelia-framework', "aurelia-framework", "aurelia-fetch-client
         }
     }
 });
-//# sourceMappingURL=welcome.js.map
+//# sourceMappingURL=index.js.map

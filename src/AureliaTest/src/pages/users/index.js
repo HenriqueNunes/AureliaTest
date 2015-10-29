@@ -49,4 +49,4 @@ System.register(['aurelia-framework', 'aurelia-fetch-client', 'fetch'], function
         }
     }
 });
-//# sourceMappingURL=users.js.map
+//# sourceMappingURL=index.js.map
