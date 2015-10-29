@@ -21,4 +21,4 @@ System.register([], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=child-router.js.map
+//# sourceMappingURL=index.js.map

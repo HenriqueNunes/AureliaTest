@@ -1,5 +1,5 @@
 ﻿import {FrameworkConfiguration} from "aurelia-framework"
 
 export function configure(aurelia: FrameworkConfiguration) {
-    aurelia.globalResources(["./upperCollection", "./upper"]);
+    aurelia.globalResources(["value-converters/upperCollection", "value-converters/upper", "custom-elements/blur-image"]);
 }
