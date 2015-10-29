@@ -39,6 +39,7 @@ System.config({
     "fetch": "github:github/fetch@0.9.0",
     "font-awesome": "npm:font-awesome@4.4.0",
     "text": "github:systemjs/plugin-text@0.0.2",
+    "typescript": "npm:typescript@1.6.2",
     "github:aurelia/animator-css@0.17.0": {
       "aurelia-metadata": "github:aurelia/metadata@0.9.0",
       "aurelia-pal": "github:aurelia/pal@0.2.0",

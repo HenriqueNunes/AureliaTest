@@ -91,7 +91,8 @@
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^0.9.4"
+      "core-js": "npm:core-js@^0.9.4",
+      "typescript": "npm:typescript@^1.6.2"
     },
     "overrides": {
       "npm:core-js@0.9.18": {

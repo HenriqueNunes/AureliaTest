@@ -7,7 +7,7 @@ System.register([], function(exports_1) {
                 function App() {
                 }
                 App.prototype.configureRouter = function (config, router) {
-                    config.title = 'Aurelia test';
+                    config.title = 'Aurelia Test';
                     config.map([
                         { route: ['', 'welcome'], name: 'welcome', moduleId: 'welcome', nav: true, title: 'Welcome' },
                         { route: 'users', name: 'users', moduleId: 'users', nav: true, title: 'Github Users' },
